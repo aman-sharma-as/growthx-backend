@@ -1,3 +1,3 @@
 # GrowthX Backend
 
-Built with Node and Express
+Built with Node and Express using MONGODB
