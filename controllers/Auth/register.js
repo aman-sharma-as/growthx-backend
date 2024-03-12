@@ -1,5 +1,5 @@
 const bcrypt=require('bcrypt');
-const user=require('../models/user')
+const user=require('../../models/user')
 
 
 exports.register=async(req,res)=>{
