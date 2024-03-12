@@ -24,3 +24,7 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`App is started at ${PORT}`);
 });
+
+const authroutes=require('./routes/Auth');
+app.use('/api',authroutes);
+
