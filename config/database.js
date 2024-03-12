@@ -1,8 +1,11 @@
+// Importing external dependiencies
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+// Importing the MongoDB URL
 const DB_URL = process.env.DB_URL;
 
+// Defining Mongoose connection function
 const dbConnect = () => {
   mongoose
     .connect(DB_URL)
@@ -15,4 +18,5 @@ const dbConnect = () => {
     });
 };
 
+// Exporting connection function
 module.exports = dbConnect;
