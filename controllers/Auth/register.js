@@ -13,8 +13,8 @@ exports.register=async(req,res)=>{
             })
         }
 
-        const isuser=await user.findOne({email:email});
-        if(isuser){
+        const isUser=await user.findOne({email:email});
+        if(isUser){
             res.status(400).json({
                 success:false,
                 message:'user already present'
@@ -34,18 +34,18 @@ exports.register=async(req,res)=>{
         let hashedPassword=await bcrypt.hash(password,10);
         //console.log('hashed',hashedPassword);
 
-        const newuser=await user.create({
+        const newUser=await user.create({
             firstName,lastName,email,
             password:hashedPassword,
             role,
             active,
             approve
         });
-        newuser.password=undefined;
+        newUser.password=undefined;
 
         res.status(200).json({
             success:true,
-            data:newuser
+            data:newUser
         })
 
     }catch(error)
